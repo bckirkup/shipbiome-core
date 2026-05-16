@@ -1,0 +1,6 @@
+Group 		Approx.Number 	Berthing Location
+Officers	16		Forward 
+CPOs		20		Chief’s Mess
+Enlisted (Deck)	~100–120	Forward Berthing 
+Enlisted (Eng.)	~80–100		Aft Berthing 
+Stewards	~10–15		Steward's Berthing
