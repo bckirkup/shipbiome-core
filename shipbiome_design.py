@@ -269,6 +269,7 @@ class DirichletMultinomialSimulator:
         # Generate Dirichlet-Multinomial sample
         # First draw from Dirichlet
         alpha = mixed_profile * self.concentration_param
+        alpha = np.maximum(alpha, 1e-9)
         sampled_probabilities = np.random.dirichlet(alpha)
 
         # Then draw from Multinomial
