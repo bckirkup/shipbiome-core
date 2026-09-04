@@ -13,7 +13,7 @@ returns Results, Methods and tables, including for paywalled articles — query
 construction, filter behaviour, result handling, and recording which section of
 the paper a number was read from.
 
-This skill is the other half: what needs sourcing in [shipbiome], and what a hit is
+This skill is the other half: what needs sourcing in shipbiome, and what a hit is
 allowed to become here.
 
 ## What actually needs sourcing here
@@ -50,7 +50,8 @@ this skill.
 
 ## Query construction
 
-- Good: `built environment surface microbiome 16S rRNA relative abundance genus level mass transit` (also: `metalworking fluid microbial community 16S Pseudomonas relative abundance`)
+- Good: `built environment surface microbiome 16S rRNA relative abundance genus level mass transit`
+- Weak: `what bacteria live on surfaces`
 
 Searches this repo needs:
 
@@ -70,16 +71,19 @@ Searches this repo needs:
 - Method — `FEAST source tracking`, `SourceTracker accuracy`,
   `unknown source proportion`, `rarefaction depth effect on beta diversity`.
 
+Search for the community, then separately for a paper that reports
+**genus-level relative abundances**, which is what a profile needs. A review
+describing which taxa dominate is not the same as a table you can normalise.
+
 ## Filter discipline
+
+Filters that are specifically wrong for this repo's literature:
 
 - `human=true` will discard the seawater, surface and industrial literature —
   most of what this repo needs. Only reasonable for skin or gut profiles, and
   even then it drops relevant *in vitro* work.
-
 - `medical_mode=true` is wrong for environmental and industrial microbiology.
-
 - `domain="bio,env,eng"` is the useful narrowing.
-
 - `year_min` is defensible here, unlike in most repos: pre-2010 culture-based
   surveys report a very different picture from amplicon and shotgun studies, and
   a profile mixing the two is incoherent. If you filter, say so in the citation
@@ -131,3 +135,7 @@ Do not adjust a profile — or pick among candidate papers — because it makes 
 FEAST-style estimator recover the mixing proportions more accurately. The
 estimator's recovery is the thing being demonstrated; tuning the sources to it
 makes the demonstration circular and teaches the wrong lesson.
+
+Where sources are genuinely hard to distinguish because they share taxa, that is
+a real property of source tracking worth surfacing, not a bug to source your way
+out of. And never modify tests to make them pass.
